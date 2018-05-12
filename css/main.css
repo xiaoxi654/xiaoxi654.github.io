@@ -1826,7 +1826,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b9c187;
+  background: #ffff67;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2813,7 +2813,7 @@ hr {
   }
 }
 body {
-  background: url("/images/murasamesama.png");
+  background: url("https://i.loli.net/2018/05/12/5af6c8dadec14.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
