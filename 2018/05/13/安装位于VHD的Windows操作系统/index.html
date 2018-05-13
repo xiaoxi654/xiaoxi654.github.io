@@ -102,23 +102,29 @@
 
 
 
-  <meta name="description" content="一个游戏玩家的记录站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiaoxi654的记录站">
-<meta property="og:url" content="https://xiaoxi654.cf/index.html">
+  <meta name="description" content="前言最近想要玩些游戏，然而新版本的Windows 10 1803出现了不兼容的情况，就想着把系统安装进vhd虚拟磁盘里，然后想着想着就这么做了，顺便把安装过程记录在这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装位于VHD的Windows操作系统">
+<meta property="og:url" content="https://xiaoxi654.cf/2018/05/13/安装位于VHD的Windows操作系统/index.html">
 <meta property="og:site_name" content="xiaoxi654的记录站">
-<meta property="og:description" content="一个游戏玩家的记录站">
+<meta property="og:description" content="前言最近想要玩些游戏，然而新版本的Windows 10 1803出现了不兼容的情况，就想着把系统安装进vhd虚拟磁盘里，然后想着想着就这么做了，顺便把安装过程记录在这">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/05/13/5af80e64e3590.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/13/5af80e9f02d09.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/13/5af80f7331094.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/13/5af80ff0cc16f.png">
+<meta property="og:updated_time" content="2018-05-13T10:25:48.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiaoxi654的记录站">
-<meta name="twitter:description" content="一个游戏玩家的记录站">
+<meta name="twitter:title" content="安装位于VHD的Windows操作系统">
+<meta name="twitter:description" content="前言最近想要玩些游戏，然而新版本的Windows 10 1803出现了不兼容的情况，就想着把系统安装进vhd虚拟磁盘里，然后想着想着就这么做了，顺便把安装过程记录在这">
+<meta name="twitter:image" content="https://i.loli.net/2018/05/13/5af80e64e3590.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://xiaoxi654.cf/"/>
+  <link rel="canonical" href="https://xiaoxi654.cf/2018/05/13/安装位于VHD的Windows操作系统/"/>
 
 
 
@@ -128,7 +134,7 @@
   };
 </script>
 
-  <title>xiaoxi654的记录站</title>
+  <title>安装位于VHD的Windows操作系统 | xiaoxi654的记录站</title>
   
 
 
@@ -175,8 +181,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,7 +221,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
@@ -268,9 +273,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -302,11 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/13/安装位于VHD的Windows操作系统/" itemprop="url">
-                  安装位于VHD的Windows操作系统
-                </a>
+          <h1 class="post-title" itemprop="name headline">安装位于VHD的Windows操作系统
               
             
           </h1>
@@ -398,16 +399,23 @@
       
 
       
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想要玩些游戏，然而新版本的Windows 10 1803出现了不兼容的情况，就想着把系统安装进vhd虚拟磁盘里，然后想着想着就这么做了，顺便把安装过程记录在这</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/13/安装位于VHD的Windows操作系统/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想要玩些游戏，然而新版本的Windows 10 1803出现了不兼容的情况，就想着把系统安装进vhd虚拟磁盘里，然后想着想着就这么做了，顺便把安装过程记录在这</p>
+<a id="more"></a>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>首先是创建一个VHD虚拟磁盘，首先进入Windows磁盘管理，点击操作-&gt;创建VHD</p>
+<p><img src="https://i.loli.net/2018/05/13/5af80e64e3590.png" alt="磁盘管理"></p>
+<p>进入创建界面后选择虚拟磁盘存储的位置，格式，大小后直接点击确定即可</p>
+<p><img src="https://i.loli.net/2018/05/13/5af80e9f02d09.png" alt="创建vhd"></p>
+<p>创建完成后不要忘记初始化磁盘</p>
+<p>然后还需要准备一个Windows安装镜像，这个就不用我多说了</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>直接挂载这个虚拟磁盘，然后使用Dism++，选择释放镜像</p>
+<p><img src="https://i.loli.net/2018/05/13/5af80f7331094.png" alt="释放镜像"></p>
+<p>直接选择镜像，把安装路径选择到虚拟磁盘所在盘符，选择添加引导和格式化直接确定即可</p>
+<p><img src="https://i.loli.net/2018/05/13/5af80ff0cc16f.png" alt="选择镜像"></p>
+<p>重启后就可以直接引导进安装在VHD的操作系统进行下一步安装了</p>
+<h1 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h1><h2 id="网卡没有驱动等情况"><a href="#网卡没有驱动等情况" class="headerlink" title="网卡没有驱动等情况"></a>网卡没有驱动等情况</h2><p>那还用说？在安装系统前直接下载准备好就是了。</p>
+<h2 id="VHD支持的系统"><a href="#VHD支持的系统" class="headerlink" title="VHD支持的系统"></a>VHD支持的系统</h2><p>VHD引导仅支持Windows 7及以上的系统，而且Windows 7仅有企业版和旗舰版支持VHD引导，且仅Windows 8以上系统可以使用VHDX格式磁盘。</p>
+<h1 id="使用到的软件"><a href="#使用到的软件" class="headerlink" title="使用到的软件"></a>使用到的软件</h1><p>安装过程中仅使用到了Dism++，<a href="https://www.chuyu.me/zh-Hans/" target="_blank" rel="noopener">这里</a>是官网地址，自行下载使用即可</p>
+
       
     </div>
 
@@ -427,181 +435,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiaoxi654.cf/2018/05/12/博客已迁移至Hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xiaoxi654">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoxi654的记录站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/12/博客已迁移至Hexo/" itemprop="url">
-                  博客已迁移至Hexo
-                </a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2018/05/12/博客已迁移至Hexo/" rel="next" title="博客已迁移至Hexo">
+                <i class="fa fa-chevron-left"></i> 博客已迁移至Hexo
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-12 19:00:22 / 修改时间：19:04:00" itemprop="dateCreated datePublished" datetime="2018-05-12T19:00:22+08:00">2018-05-12</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日记/" itemprop="url" rel="index"><span itemprop="name">日记</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/12/博客已迁移至Hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/12/博客已迁移至Hexo/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>之前一直把博客放在WordPress上，想要简化一下就转到了Hexo<br>嘛，Hexo的Markdown编写也不难就是了<br>顺便服务迁移到了Github Pages，毕竟十天前才支持自定义域名SSL的功能</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -611,199 +466,29 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiaoxi654.cf/2018/04/21/百度网盘下载神器-proxyee-down/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xiaoxi654">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoxi654的记录站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/21/百度网盘下载神器-proxyee-down/" itemprop="url">
-                  百度网盘下载神器 proxyee-down
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-04-21 12:15:25" itemprop="dateCreated datePublished" datetime="2018-04-21T12:15:25+08:00">2018-04-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-13 18:25:50" itemprop="dateModified" datetime="2018-05-13T18:25:50+08:00">2018-05-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/软件/" itemprop="url" rel="index"><span itemprop="name">软件</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/21/百度网盘下载神器-proxyee-down/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/21/百度网盘下载神器-proxyee-down/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想必各位都用过百度网盘了，那个限速实在是让人无法接受(例如每线程10kb/s)。这时候就要找解决的方式，proxyee-down就这么出现了  </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/21/百度网盘下载神器-proxyee-down/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -824,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -885,6 +579,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些小问题"><span class="nav-number">4.</span> <span class="nav-text">一些小问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网卡没有驱动等情况"><span class="nav-number">4.1.</span> <span class="nav-text">网卡没有驱动等情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VHD支持的系统"><span class="nav-number">4.2.</span> <span class="nav-text">VHD支持的系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用到的软件"><span class="nav-number">5.</span> <span class="nav-text">使用到的软件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1012,6 +722,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
 
   
 
@@ -1026,6 +740,23 @@
     <script id="dsq-count-scr" src="https://xiaoxiblog.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://xiaoxi654.cf/2018/05/13/安装位于VHD的Windows操作系统/';
+        this.page.identifier = '2018/05/13/安装位于VHD的Windows操作系统/';
+        this.page.title = '安装位于VHD的Windows操作系统';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xiaoxiblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
