@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言最近在群上看到有在树莓派上安装Windows arm64版本的消息，就去找了一下，然后就找到了安装方式">
+<meta name="keywords" content="Windows,树莓派">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在树莓派上安装Windows 10 arm64版">
+<meta property="og:url" content="https://xiaoxi654.me/2018/05/20/在树莓派上安装Windows-10-arm64版/index.html">
+<meta property="og:site_name" content="xiaoxi654的记录站">
+<meta property="og:description" content="前言最近在群上看到有在树莓派上安装Windows arm64版本的消息，就去找了一下，然后就找到了安装方式">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/05/20/5b0065dee0539.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/20/5b0066fdbfd79.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/20/5b00689fd5342.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/20/5b0069cdd4f8a.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/20/5b006ac21833d.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/20/5b006f05907dd.png">
+<meta property="og:updated_time" content="2018-05-19T19:00:05.911Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在树莓派上安装Windows 10 arm64版">
+<meta name="twitter:description" content="前言最近在群上看到有在树莓派上安装Windows arm64版本的消息，就去找了一下，然后就找到了安装方式">
+<meta name="twitter:image" content="https://i.loli.net/2018/05/20/5b0065dee0539.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://xiaoxi654.me/2018/05/20/在树莓派上安装Windows-10-arm64版/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>在树莓派上安装Windows 10 arm64版 | xiaoxi654的记录站</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiaoxi654的记录站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaoxi654.me/2018/05/20/在树莓派上安装Windows-10-arm64版/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiaoxi654">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoxi654的记录站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在树莓派上安装Windows 10 arm64版
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-20 01:44:07 / 修改时间：03:00:05" itemprop="dateCreated datePublished" datetime="2018-05-20T01:44:07+08:00">2018-05-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/树莓派/" itemprop="url" rel="index"><span itemprop="name">树莓派</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/在树莓派上安装Windows-10-arm64版/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/20/在树莓派上安装Windows-10-arm64版/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近在群上看到有在树莓派上安装Windows arm64版本的消息，就去找了一下，然后就找到了安装方式</p>
+<a id="more"></a>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>下载UEFI引导<a href="https://github.com/andreiw/RaspberryPiPkg" target="_blank" rel="noopener">https://github.com/andreiw/RaspberryPiPkg</a></p>
+<p>下载驱动<a href="https://github.com/andreiw/rpi3winstuff" target="_blank" rel="noopener">https://github.com/andreiw/rpi3winstuff</a></p>
+<p>下载Windows安装镜像<a href="https://gitlab.com/uup-dump/uupdl" target="_blank" rel="noopener">https://gitlab.com/uup-dump/uupdl</a></p>
+<p>准备一张最小为16G的SD卡，使用<strong>MBR</strong>分区表，分为两个区，一个Boot加一个系统分区即可</p>
+<h1 id="下载Windows安装镜像"><a href="#下载Windows安装镜像" class="headerlink" title="下载Windows安装镜像"></a>下载Windows安装镜像</h1><p>直接打开uupdl的批处理文件，R，R，A，选择语言和操作版本即可开始下载，下载完成后为ESD格式，存放在uup文件夹里，使用其他方法转换成wim格式即可</p>
+<h1 id="为镜像整合驱动"><a href="#为镜像整合驱动" class="headerlink" title="为镜像整合驱动"></a>为镜像整合驱动</h1><p>首先创建一个临时目录用来存储系统文件，里面包含install.wim镜像，包含驱动的文件夹，和一个空文件夹</p>
+<p><img src="https://i.loli.net/2018/05/20/5b0065dee0539.png" alt=""></p>
+<p>然后以管理员身份打开cmd，切换到此目录后输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism /get-wiminfo /wimfile:wim文件名</span><br></pre></td></tr></table></figure>
+<p>输出应该是这样的</p>
+<p><img src="https://i.loli.net/2018/05/20/5b0066fdbfd79.png" alt=""></p>
+<p>然后输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism /mount-image /imagefile:wim文件名 /index:索引后面的数字，多版本需要在此指定 /mountdir:空文件夹名</span><br></pre></td></tr></table></figure>
+<p>这一步需要的时间会很长，请耐心等待</p>
+<p>完成后会输出这些内容，同时文件夹中会出现Windows镜像的文件</p>
+<p><img src="https://i.loli.net/2018/05/20/5b00689fd5342.png" alt=""></p>
+<p>接下来集成驱动，输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism /add-driver /image:上一步释放镜像的文件夹 /add-driver /driver:驱动所在的文件夹 /recurse /forceunsigned</span><br></pre></td></tr></table></figure>
+<p>然后会提示这个，就代表整合成功了</p>
+<p><img src="https://i.loli.net/2018/05/20/5b0069cdd4f8a.png" alt=""></p>
+<p>最后是卸载并保存镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism /unmount-wim /mountdir:镜像被释放的文件夹 /commit</span><br></pre></td></tr></table></figure>
+<p>这一步同样需要很久，这样就算是准备完成了</p>
+<p><img src="https://i.loli.net/2018/05/20/5b006ac21833d.png" alt=""></p>
+<h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><p>首先，把uefi引导的文件放到SD卡的Boot分区里，必须选用标注了<strong>WoA-17125-only</strong>的引导文件</p>
+<p>然后在cmd中输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism /apply-image /imagefile:wim文件名 /index:上面使用的索引数字 /applydir:系统分区的盘符</span><br></pre></td></tr></table></figure>
+<p>这一步需要的时间极长，请耐心等待。等待出现这样的提示就算部署完成了</p>
+<p><img src="https://i.loli.net/2018/05/20/5b006f05907dd.png" alt=""></p>
+<h1 id="创建引导文件"><a href="#创建引导文件" class="headerlink" title="创建引导文件"></a>创建引导文件</h1><p>cmd中输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdboot 系统所在盘符\Windows /s Boot盘符 /f UEFI</span><br></pre></td></tr></table></figure>
+<p>完成后会提示”已成功创建启动文件”</p>
+<p>然后输入这两条命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /store Boot盘符:\EFI\Microsoft\Boot\bcd /set &#123;default&#125; testsigning on</span><br><span class="line">bcdedit /store Boot盘符:\EFI\Microsoft\Boot\bcd /set &#123;default&#125; nointegritychecks on</span><br></pre></td></tr></table></figure>
+<h1 id="最后的准备"><a href="#最后的准备" class="headerlink" title="最后的准备"></a>最后的准备</h1><p>创建一个注册表文件，内容为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\State]</span><br><span class="line">&quot;ImageState&quot;=&quot;IMAGE_STATE_COMPLETE&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\Setup]</span><br><span class="line">&quot;SetupPhase&quot;=dword:00000000</span><br><span class="line">&quot;SetupType&quot;=dword:00000000</span><br><span class="line">&quot;OOBEInProgress&quot;=dword:00000000</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion]</span><br><span class="line">&quot;oobeldr.exe&quot;=dword:00000003</span><br><span class="line">&quot;SetupFinalTasks&quot;=dword:00000003</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\Setup\Timers\OobeBootPerf]</span><br><span class="line">&quot;StartLow&quot;=dword:ee3f4a6f</span><br><span class="line">&quot;StartHigh&quot;=dword:01d16b34</span><br><span class="line">&quot;StopLow&quot;=dword:aa04f836</span><br><span class="line">&quot;StopHigh&quot;=dword:01d16b35</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\Setup\Timers\OobeCmdPerf]</span><br><span class="line">&quot;StartLow&quot;=dword:0841a3a7</span><br><span class="line">&quot;StartHigh&quot;=dword:01d16b35</span><br><span class="line">&quot;StopLow&quot;=dword:956f7fdf</span><br><span class="line">&quot;StopHigh&quot;=dword:01d16b35</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\Setup\Timers\OobeExePerf]</span><br><span class="line">&quot;StartLow&quot;=dword:0846686d</span><br><span class="line">&quot;StartHigh&quot;=dword:01d16b35</span><br><span class="line">&quot;StopLow&quot;=dword:aa02967b</span><br><span class="line">&quot;StopHigh&quot;=dword:01d16b35</span><br></pre></td></tr></table></figure>
+<p>将此文件放入SD卡的系统分区备用</p>
+<h1 id="开机"><a href="#开机" class="headerlink" title="开机"></a>开机</h1><p><strong>从此阶段开始，不再提供截图</strong></p>
+<p>将SD卡插入树莓派，直接开机，过程中<strong>不要</strong>连接任何USB设备，包括键盘和鼠标</p>
+<p>启动时间很长，请耐心等待</p>
+<p>在这期间会报错，连接键盘，按下shift+f10打开cmd，切换到注册表所在目录，使用regedit导入注册表文件，并解锁Administrator用户，最后重启即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">regedit file.reg</span><br><span class="line">net user Administrator /active:yes</span><br><span class="line">shutdown /r /t 0</span><br></pre></td></tr></table></figure>
+<p>重启可能会卡住，这个和usb驱动有关，尝试拔插几次usb设备就可以正常重启了</p>
+<p>最后就可以正常进入系统了</p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
+<li>UEFI的SD卡驱动并不完善，速度不是很可观</li>
+<li>USB驱动同样不完善，U盘之类的会导致系统蓝屏</li>
+<li>因为第二点，所以想要往系统里添加文件需要提前塞进SD卡</li>
+<li>没有声音，没有网络，没有显卡，全是因为没有驱动</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+            <a href="/tags/树莓派/" rel="tag"># 树莓派</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/13/安装位于VHD的Windows操作系统/" rel="next" title="安装位于VHD的Windows操作系统">
+                <i class="fa fa-chevron-left"></i> 安装位于VHD的Windows操作系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xiaoxi654</p>
+              <p class="site-description motion-element" itemprop="description">一个游戏玩家的记录站</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载Windows安装镜像"><span class="nav-number">3.</span> <span class="nav-text">下载Windows安装镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为镜像整合驱动"><span class="nav-number">4.</span> <span class="nav-text">为镜像整合驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装系统"><span class="nav-number">5.</span> <span class="nav-text">安装系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建引导文件"><span class="nav-number">6.</span> <span class="nav-text">创建引导文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后的准备"><span class="nav-number">7.</span> <span class="nav-text">最后的准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开机"><span class="nav-number">8.</span> <span class="nav-text">开机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">9.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiaoxi654</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://xiaoxiblog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://xiaoxi654.me/2018/05/20/在树莓派上安装Windows-10-arm64版/';
+        this.page.identifier = '2018/05/20/在树莓派上安装Windows-10-arm64版/';
+        this.page.title = '在树莓派上安装Windows 10 arm64版';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xiaoxiblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
