@@ -9,7 +9,7 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-CN">
-<head>
+<head><link rel=manifest href=/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
@@ -99,7 +99,6 @@
 
   
 
-<link rel="manifest" href="/manifest.json">
 
 
   <meta name="description" content="前言想必各位都用过百度网盘了，那个限速实在是让人无法接受(例如每线程10kb/s)。这时候就要找解决的方式，proxyee-down就这么出现了">
@@ -831,5 +830,10 @@
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1526996225414')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>

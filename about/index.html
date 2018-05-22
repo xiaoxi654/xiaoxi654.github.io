@@ -9,7 +9,7 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-CN">
-<head>
+<head><link rel=manifest href=/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
@@ -99,7 +99,6 @@
 
   
 
-<link rel="manifest" href="/manifest.json">
 
 
   <meta name="description" content="我回来了，或许是这样吧 一个游戏玩家，什么都玩，戳饼啦，FPS啦，猛汉啦都有在玩 也在自学编程语言，也想着要搞些什么大新闻(不存在)XD 欢迎来陪我戳饼  也欢迎加入我的Discord Minecraft服务器">
@@ -630,5 +629,10 @@
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1526996225414')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>
