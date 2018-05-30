@@ -2,6 +2,6 @@ User-agent: *
 Disallow: /css/
 Disallow: /images/
 Disallow: /js/
-Dissallow: /lib/
+Disallow: /lib/
 
 Sitemap: https://xiaoxi654.me/sitemap.xml
