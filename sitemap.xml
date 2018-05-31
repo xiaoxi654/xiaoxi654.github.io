@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaoxi654.me/about/index.html</loc>
+    
+    <lastmod>2018-05-31T10:46:27.995Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiaoxi654.me/2018/05/30/%E5%9C%A8Termux%E4%B8%8A%E9%83%A8%E7%BD%B2Hexo/</loc>
     
     <lastmod>2018-05-30T06:27:06.255Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://xiaoxi654.me/2018/05/13/%E5%AE%89%E8%A3%85%E4%BD%8D%E4%BA%8EVHD%E7%9A%84Windows%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     
     <lastmod>2018-05-19T18:10:16.132Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiaoxi654.me/about/index.html</loc>
-    
-    <lastmod>2018-05-13T12:37:03.725Z</lastmod>
     
   </url>
   
