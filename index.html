@@ -338,7 +338,7 @@
                 
               
 
-              <time title="创建时间：2018-07-07 19:13:51 / 修改时间：19:53:25" itemprop="dateCreated datePublished" datetime="2018-07-07T19:13:51+08:00">2018-07-07</time>
+              <time title="创建时间：2018-07-07 19:13:51 / 修改时间：19:55:17" itemprop="dateCreated datePublished" datetime="2018-07-07T19:13:51+08:00">2018-07-07</time>
             
 
             
@@ -406,44 +406,16 @@
 
       
         
-          
-            <h1 id="事前准备"><a href="#事前准备" class="headerlink" title="事前准备"></a>事前准备</h1><p>一台 登陆了账号，且系统版本为3.65 到 3.68 系统的 psv</p>
+          <h1 id="事前准备"><a href="#事前准备" class="headerlink" title="事前准备"></a>事前准备</h1><p>一台 登陆了账号，且系统版本为3.65 到 3.68 系统的 psv</p>
 <p>一台能够使用的电脑</p>
 <p>仅此而已</p>
-<h1 id="开始破解"><a href="#开始破解" class="headerlink" title="开始破解"></a>开始破解</h1><h2 id="下载破解所需的东西"><a href="#下载破解所需的东西" class="headerlink" title="下载破解所需的东西"></a>下载破解所需的东西</h2><p>下载<br><a href="https://github.com/TheOfficialFloW/h-encore/releases/download/v1.0/h-encore.zip" target="_blank" rel="noopener">h-encore</a>,<br><a href="https://codestation.github.io/qcma/" target="_blank" rel="noopener">qcma</a>,<br><a href="https://github.com/yifanlu/psvimgtools" target="_blank" rel="noopener">psvimgtools</a>,<br><a href="https://github.com/mmozeiko/pkg2zip" target="_blank" rel="noopener">pkg2zip</a>,<br><a href="http://ares.dl.playstation.net/cdn/JP0741/PCSG90096_00/xGMrXOkORxWRyqzLMihZPqsXAbAXLzvAdJFqtPJLAZTgOcqJobxQAhLNbgiFydVlcmVOrpZKklOYxizQCRpiLfjeROuWivGXfwgkq.pkg" target="_blank" rel="noopener">bitter smile(游戏)</a></p>
-<h2 id="解压破解文件"><a href="#解压破解文件" class="headerlink" title="解压破解文件"></a>解压破解文件</h2><p>安装 qcma</p>
-<p>把 h-encore 解压出来，psvimgtools 解压到 h-encore 文件夹里面</p>
-<p>pkg2zip 和 bitter smile 的 pkg 放在一起</p>
-<h2 id="准备破解使用的软件"><a href="#准备破解使用的软件" class="headerlink" title="准备破解使用的软件"></a>准备破解使用的软件</h2><p>使用cmd，切换到pkg2zip的目录后执行 <code>pkg2zip -x xGMrXOkORxWRyqzLMihZPqsXAbAXLzvAdJFqtPJLAZTgOcqJobxQAhLNbgiFydVlcmVOrpZKklOYxizQCRpiLfjeROuWivGXfwgkq.pkg</code></p>
-<p>完成后会多出一个 <code>app\PCSG90096</code> 的文件夹</p>
-<p>把 PCSG90096 这个文件夹里面的东西丢进 <code>h-encore\app\ux0_temp_game_PCSG90096_app_PCSG90096</code> 里面 (也就是 eboot.bin 和 VITA_PATH.TXT 放在一起)</p>
-<p>把 <code>app/PCSG90096/sce_sys/package/temp.bin</code> 这个文件丢到 <code>h-encore/license/ux0_temp_game_PCSG90096_license_app_PCSG90096</code> 里面，并改名为 <code>6488b73b912a753a492e2714e9b38bc7.rif</code> 。此处需注意，后缀名是<code>.rif</code>，而不是<code>.bin</code></p>
-<p>打开 qcma，并在设置里把 <code>Use this version for updates</code> 改成 <code>FW 0.00 (Always up-to-date)</code></p>
-<p>打开你的 psv，并使用 usb 线连接到电脑。打开内容管理，选择复制内容，个人电脑→PS Vita</p>
-<p>这时候你电脑文档中会出现一个 <code>PS Vita/APP/xxxxxxxxxxxxxxxx</code> 的文件夹，把文件夹名复制出来，输入进<a href="http://cma.henkaku.xyz" target="_blank" rel="noopener">这个</a>网页，它会给你另外一串key</p>
-<p>在 h-encore 下建立一个 bat 文件，内容如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">psvimg-create -n app -K YOUR_KEY app PCSG90096/app</span><br><span class="line">psvimg-create -n appmeta -K YOUR_KEY appmeta PCSG90096/appmeta</span><br><span class="line">psvimg-create -n license -K YOUR_KEY license PCSG90096/license</span><br><span class="line">psvimg-create -n savedata -K YOUR_KEY savedata PCSG90096/savedata</span><br></pre></td></tr></table></figure>
-<p>YOUR_KEY 均替换成你刚刚获取到的一长串 key</p>
-<p>直接运行这个bat即可</p>
-<h2 id="安装破解程序到psv上"><a href="#安装破解程序到psv上" class="headerlink" title="安装破解程序到psv上"></a>安装破解程序到psv上</h2><p>把 <code>h-encore/PCSG90096</code> 放进文档中的 <code>PS Vita/APP/xxxxxxxxxxxxxxxx/PCSG90096</code></p>
-<p>右键 qcma，选择 <code>Refresh database</code></p>
-<p>在 psv 上打开内容管理，选择复制内容，个人电脑→PS Vita，应用程式，PS Vita</p>
-<p><img src="https://pic.xiaoxi654.me/images/2018/07/07/aaa0fc93b54214f1cf39096018057f10.jpg" alt="PSV h-encore"></p>
-<p>直接安装 h-encore</p>
-<p>在 psv 上打开 h-encore 程序，选择 <code>install henkaku</code> 和 <code>download VitaShell</code></p>
-<p>以后重启的时候只需要选择 <code>install henkaku</code> 就可以了</p>
-<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><h2 id="破解问题"><a href="#破解问题" class="headerlink" title="破解问题"></a>破解问题</h2><ul>
-<li><p>我打开 h-encore 的时候，它一直白屏 - 这个问题有的时候会出现，你只需要按住电源键强制重启，再次开机进行破解应该就可以了</p>
-</li>
-<li><p>打开 h-encore 的时候看到 <code>C2-12828-1</code> 错误 - 这是极其少见的错误，重新打开破解就好了</p>
-</li>
-<li><p>当我打开 h-encore 的时候，它运行了 <code>bitter smile demo</code> 这款游戏 - 你的存档出问题了，从头重新安装破解即可</p>
-</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><p><a href="https://github.com/TheOfficialFloW/h-encore" target="_blank" rel="noopener">h-encore GitHub 仓库</a></p>
-<p>感谢<strong>TheFloW</strong>完成了 psv 3.65 - 3.68 版本的破解</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/07/PSV-3-65到3-68系统破解教程/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
